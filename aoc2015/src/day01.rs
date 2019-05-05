@@ -9,7 +9,7 @@ pub mod solution {
 				println!("NO FILE");
 				return (0,0);
 			},
-   		 };
+		};
 
     	part_1_and_2(input)
 	}
