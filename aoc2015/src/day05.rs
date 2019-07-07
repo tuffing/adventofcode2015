@@ -2,9 +2,9 @@ pub mod solution {
 	extern crate fancy_regex;
 	use fancy_regex::*;
 	
-		pub fn run() -> (usize, usize) {	
+	pub fn run() -> (usize, usize) {	
 		let input = match crate::loadinput::file::load_input_multi_line("../../inputs/day05/input.txt") {
-		 	Ok(val) => val,
+			Ok(val) => val,
 			Err(_) => {
 				println!("NO FILE");
 				return (0,0);
@@ -22,10 +22,10 @@ pub mod solution {
 	///	c: It does not contain the strings ab, cd, pq, or xy, even if they are part of one of the other requirements.
 	///
 	///	# Part 2
-  ///  a. It contains a pair of any two letters that appears at least twice in the string without overlapping, like xyxy (xy)
-  ///		 or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
-  ///  b. It contains at least one letter which repeats with exactly one letter between them, like xyx, abcdefeghi (efe),
-  ///		 or even aaa.
+	///  a. It contains a pair of any two letters that appears at least twice in the string without overlapping, like xyxy (xy)
+	///		 or aabcdefgaa (aa), but not like aaa (aa, but it overlaps).
+	///  b. It contains at least one letter which repeats with exactly one letter between them, like xyx, abcdefeghi (efe),
+	///		 or even aaa.
 	///
 	pub fn part_1_and_2(input: Vec<(String)>) -> (usize, usize) {
 		let part1_a = Regex::new(r"([aeiou]\w*){3}").unwrap();
