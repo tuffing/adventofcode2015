@@ -6,6 +6,7 @@ mod day03;
 //mod day04;
 mod day05;
 mod day06;
+mod day07;
 
 fn main() {
     println!("Advent of Code 2015");
@@ -25,7 +26,10 @@ fn main() {
     let (part1, part2) = day05::solution::run();
     println!("Day 5 ---- Part1: {}, Part2: {}", part1, part2);
 
-    let (part1, part2) = day06::solution::run();
-    println!("Day 6 ---- Part1: {}, Part2: {}", part1, part2);
+    //let (part1, part2) = day06::solution::run();
+    //println!("Day 6 ---- Part1: {}, Part2: {}", part1, part2);
+
+    let (part1, part2) = day07::solution::run();
+    println!("Day 7 ---- Part1: {}, Part2: {}", part1, part2);
 }
 
