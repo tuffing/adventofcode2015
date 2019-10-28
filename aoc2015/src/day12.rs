@@ -1,5 +1,5 @@
 pub mod solution {
-	use serde_json::{Result, Value};
+	use serde_json::{Value};
 	use regex::Regex;
 
 	pub fn run() -> (i64, i64) {	
@@ -59,10 +59,13 @@ pub mod solution {
 				}
 			}
 
+			//even though an object in this case shares the same functions we need as for a Vec, 
+			//we need to run them sperately again here. there doesn't seem to be a useful shared ancestor 
+			//for the object here and a vec to grasp onto. 
 			if v.is_object() {
 				let obj = v.as_object().unwrap();
 
-				for (k,x) in obj.iter() {
+				for (_,x) in obj.iter() {
 					if x.is_string() && x.as_str().unwrap() == "red" {
 						value_so_far = 0;
 						new_arr.clear();
