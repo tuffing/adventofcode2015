@@ -111,7 +111,7 @@ pub mod solution {
 	#[test]
 	fn test_part_1_2() {
 
-		let (p1,p2) = part1_2("abcdefgh".to_string());
+		let p1 = part1_2("abcdefgh".to_string());
 
 		assert_eq!(p1, "abcdffaa".to_string());
 	}
