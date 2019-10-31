@@ -2,7 +2,7 @@ pub mod solution {
 	use regex::Regex;
 
 	pub fn run() -> (usize, usize) {	
-		let _input = match crate::loadinput::file::load_input_multi_line("../../inputs/day08/input.txt") {
+		let _input = match crate::loadinput::file::load_input_multi_line("../../inputs/day16/input.txt") {
 		 	Ok(val) => val,
 			Err(_) => {
 				println!("NO FILE");
@@ -13,7 +13,7 @@ pub mod solution {
 		part1_2(&_input)
 	}
 
-	pub fn part1_2(input: &Vec<(String)>) -> (usize,usize) {
+	pub fn part1(input: String) -> (usize,usize) {
 		//both of these problems don't need us to actually encode he string per the rules
 		//we just need to strip out / add characters and do some math
 
