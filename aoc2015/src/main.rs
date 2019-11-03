@@ -15,7 +15,7 @@ mod day12;
 mod day13;
 mod day14;*/
 //mod day15;
-mod day16;
+//mod day16;
 mod day17;
 
 fn main() {
@@ -66,8 +66,11 @@ fn main() {
     //let (part1, part2) = day15::solution::run();
     //println!("Day 15 ---- Part1: {}, Part2: {}", part1, part2);
 
-    let (part1, part2) = day16::solution::run();
-    println!("Day 16 ---- Part1: {}, Part2: {}", part1, part2);
+    //let (part1, part2) = day16::solution::run();
+    //println!("Day 16 ---- Part1: {}, Part2: {}", part1, part2);
+
+    let (part1, part2) = day17::solution::run();
+    println!("Day 17 ---- Part1: {}, Part2: {}", part1, part2);
 
 }
 

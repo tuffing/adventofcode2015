@@ -1,56 +1,24 @@
 pub mod solution {
 
-	pub fn run() -> (usize, usize) {
-		(0,0)
+	pub fn run() -> (i64, i64) {
+		let jugs = vec![50,44,11,49,42,46,18,32,26,40,21,7,18,43,10,47,36,24,22,40];
+		(part1(&jugs),part2(&jugs))
 	}
 
 
-	pub fn part1() -> (i64,i64) {
-		let length = 20;
-		let  mut jugs = Vec::new();
-		jugs.push(50);
-		jugs.push(44);
-		jugs.push(11);
-		jugs.push(49);
-		jugs.push(42);
-		jugs.push(46);
-		jugs.push(18);
-		jugs.push(32);
-		jugs.push(26);
-		jugs.push(40);
-		jugs.push(21);
-		jugs.push(7);
-		jugs.push(18);
-		jugs.push(43);
-		jugs.push(10);
-		jugs.push(47);
-		jugs.push(36);
-		jugs.push(24);
-		jugs.push(22);
-		jugs.push(40);
-		//jugs.push(5);
+	pub fn part1(jugs: &Vec<(usize)>) -> i64 {
+		//a variant of knapsack. 
 
+		let length = jugs.len();
 
 		let mut uses = vec![1; length];
-		//uses[3] = 2;
-		println!("{:?}", uses);
-		//jugs.push(5);
-		//jugs.push(5);
 
 		let goal = 150;
 
-		//let mut table = vec![vec![0 as i64; length]; goal+1];
-		let sum = 20 + 15 + 10 + 5 + 5;
-
 		let mut table = vec![0; goal+1];
-		//let mut table = vec![vec![0 as i64; length]; goal+1];
 		
 		table[0] = 1;
-		//for i in 0..length {
-		//	table[0][i] = 1;
-		//} 
 
-		//println!("{:?}", table);
 		for c in 0..length {
 			let mut rs = table.clone();
 			
@@ -64,103 +32,31 @@ pub mod solution {
 			}
 		}
 
-		println!("{:?}", table[goal]);
-
-
-		/*for i in 1..length {
-			for j in (0..goal).rev() {
-				if table[j] != 0 {
-					table[j+jugs[i]] = table[j] + table[j +jugs[i]];
-				}
-			} 
-		}*/
-
-		/*for i in 1..goal+1 {
-			for j in (0..length).rev() {
-				println!("{:?}", j);
-				let mut x = 0;
-				if i as i64 - jugs[j] >= 0 {
-					x = table[i-jugs[j] as usize][j];
-				}
-
-				let mut y = 0;
-				if j >= 1 {
-					y = table[i][j-1];
-				}
-
-				table[i][j] = x+y;
-
-			}
-		}*/
-
-
-		/*for i in 1..goal+1 {
-			for j in (0..length).rev() {
-				println!("{:?}", j);
-				let mut x = 0;
-				if i as i64 - jugs[j] >= 0 {
-					x = table[i-jugs[j] as usize][j];
-				}
-
-				let mut y = 0;
-				if j >= 1 {
-					y = table[i][j-1];
-				}
-
-				table[i][j] = x+y;
-
-			}
-		}*/
-
-		println!("{:?}", table);
-		//println!("{:?}", table[goal][length-1]);
-
-		(0,0)
+		table[goal]
 	}
 
-	pub fn part2() -> (i64,i64) {
-		let length = 5;
-		let  mut jugs = Vec::new();
-		jugs.push(20 as i64);
-		jugs.push(15);
-		jugs.push(10);
-		jugs.push(5);
-		jugs.push(5);
+	pub fn part2(jugs: &Vec<(usize)>) -> i64 {
+		// I couldn't find any famous mathematical algorithms here
+		// so brute force it is.. quick eyeball tells me the minimum 
+		// number of jugs is 4, so 4 nested loops will do it. 
+		let length = jugs.len();
+		let goal = 150;
 
+		let mut total = 0;
 
-		//uses[3] = 2;
-		//jugs.push(5);
-		//jugs.push(5);
-
-		let goal = 25;
-
-		let mut table = vec![vec![0 as i64; length]; goal+1];
-
-		//let mut table = vec![vec![0 as i64; length]; goal+1];
-		
-		for i in 0..length {
-			table[0][i] = 1;
-		} 
-
-		for i in 1..goal+1 {
-			for j in (0..length) {
-				let mut x = 0;
-				if  i as i64 -jugs[j] >= 0 {
-					x = table[(i as i64 - jugs[j]) as usize][j];
-				}
-
-				let mut y = 0;
-				if j >= 1 {
-					y = table[i][j-1];
-					table[i][j] = x + y;
+		for a in 0..length {
+			for b in a+1..length {
+				for c in b+1..length {
+					for d in c+1..length {
+						if jugs[a] + jugs[b] + jugs[c] + jugs[d] == 150 {
+							total += 1;
+						}
+					}
 				}
 			}
 		}
-		println!("{:?}", table[goal][length-1]);
-		//println!("{:?}", table);
-		//println!("{:?}", table[goal][length-1]);
 
-		(0,0)
+		return 0;
 	}
 
 
