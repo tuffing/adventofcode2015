@@ -1,7 +1,4 @@
 pub mod solution {
-	extern crate rand;
-
-
 	pub fn run() -> (usize, usize) {
 
 		part1_2()
