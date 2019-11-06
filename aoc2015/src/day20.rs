@@ -5,7 +5,6 @@ pub mod solution {
 	pub fn run() -> (usize, usize) {
 
 		part1_2()
-		//(part1(),part2())
 	}
 
 
@@ -42,35 +41,6 @@ pub mod solution {
 
 		(lowest_index_p1, lowest_index_p2)
 	}
-
-	/*pub fn part2() -> usize {
-		let mut houses = vec![0; 800001];
-
-		let goal = 33100000;
-
-		let mut max = 0;
-		let mut lowest_index = houses.len();
-
-		for i in 1..houses.len()-1 {
-			for p in (i..i*50).step_by(i) {
-				if p > houses.len()-1 {
-					break;
-				}
-
-				houses[p] += i * 11;
-				if houses[p] > max {
-					max = houses[p]
-				}
-
-				if houses[p] >= goal && i < lowest_index {
-					lowest_index = i;
-				}
-			}
-		}
-
-		lowest_index
-	}*/
-
 	
 }
 
