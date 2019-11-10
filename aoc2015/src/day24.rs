@@ -23,14 +23,13 @@ pub mod solution {
 			find(&mut result, goal, 1, 0, 0, i, &values);
 		}
 
-
-		//println!("{:?} {:?}", result.smallest_count, result.highest_qe);
-		
-
 		result.lowest_qe
 	}
 
 	pub fn find(result: &mut Result, goal: usize, qe: usize, weight: usize, count: usize, next_index: usize, options: &Vec<usize>)  {
+		//just recursively trying every option until we get there.
+		//lots of ways to kill the recursion so to try and avoid trying duplicates in different orders 
+		//or path ways that will never work. Some will still get through of course.
 		let new_count = count + 1;
 		let new_qe = qe * options[next_index];
 
@@ -48,7 +47,7 @@ pub mod solution {
 			return;
 		}
 
-		if new_weight >= goal || new_count >= result.smallest_count || new_qe >= result.lowest_qe {//|| new_qe > (usize::max_value() / 115) {
+		if new_weight >= goal || new_count >= result.smallest_count || new_qe >= result.lowest_qe {
 			return;
 		}
 
