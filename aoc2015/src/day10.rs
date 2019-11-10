@@ -43,7 +43,7 @@ pub mod solution {
 	#[test]
 	fn test_part_1_2() {
 
-		let (p1,p2) = part1_2("1".to_string(), 5, 6);
+		let (p1,_) = part1_2("1".to_string(), 5, 6);
 
 		assert_eq!(p1, 6);
 		//assert_eq!(p2, 982);

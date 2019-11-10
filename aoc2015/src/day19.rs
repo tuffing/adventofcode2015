@@ -69,7 +69,7 @@ pub mod solution {
 
 		while escape < 1500 && current != "e" {
 			let prev = current.clone();
-			let mut new = "".to_string();
+			let mut new;
 
 			for i in (0..values.len()).rev() {
 				//if the string replace finds nothing then we don't count it
@@ -77,7 +77,7 @@ pub mod solution {
 				//Interesting note here: string replace is much much faster than regex replace
 				new = current.replacen(values[i].1, values[i].0,1).to_string();
 
-				if (new != current) {
+				if new != current {
 					total += 1;
 					current = new.to_string();
 					break;

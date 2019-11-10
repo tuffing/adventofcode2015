@@ -11,18 +11,18 @@ pub mod solution {
 
 		let length = jugs.len();
 
-		let mut uses = vec![1; length];
+		let uses = vec![1; length];
 
-		let goal = 150;
+		let _goal = 150;
 
-		let mut table = vec![0; goal+1];
+		let mut table = vec![0; _goal+1];
 		
 		table[0] = 1;
 
 		for c in 0..length {
 			let mut rs = table.clone();
 			
-			for i in jugs[c]..goal+1 {
+			for i in jugs[c].._goal+1 {
 				rs[i] += rs[i-jugs[c]];
 
 				table[i] += rs[i-jugs[c]];
@@ -32,7 +32,7 @@ pub mod solution {
 			}
 		}
 
-		table[goal]
+		table[_goal]
 	}
 
 	pub fn part2(jugs: &Vec<(usize)>) -> i64 {
@@ -40,7 +40,6 @@ pub mod solution {
 		// so brute force it is.. quick eyeball tells me the minimum 
 		// number of jugs is 4, so 4 nested loops will do it. 
 		let length = jugs.len();
-		let goal = 150;
 
 		let mut total = 0;
 
@@ -56,19 +55,19 @@ pub mod solution {
 			}
 		}
 
-		return 0;
+		return total;
 	}
 
 
 
-	#[test]
+/*	#[test]
 	fn test_part_1_2() {
 
 		let (p1,p2) = part2();
 
 		assert_eq!(p1, 4);
 		//assert_eq!(p2, 689);
-	}
+	}*/
 
 }
 

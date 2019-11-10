@@ -17,7 +17,7 @@ pub mod solution {
 		}
 
 
-		for i in 0..6436343 {
+		for _ in 0..6436343 {
 			increment(&mut registry, 7);
 
 			if validate(&registry) {

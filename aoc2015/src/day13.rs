@@ -157,7 +157,7 @@ pub mod solution {
 	#[test]
 	fn test_part_1_2() {
 
-		let (p1,p2) = part1_2(&vec![
+		let (p1,_) = part1_2(&vec![
 			"Alice would gain 54 happiness units by sitting next to Bob.".to_string(),
 			"Alice would lose 79 happiness units by sitting next to Carol.".to_string(),
 			"Alice would lose 2 happiness units by sitting next to David.".to_string(),

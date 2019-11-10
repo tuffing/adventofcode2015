@@ -9,8 +9,8 @@ pub mod solution {
 			},
 		};
 
-		//(part1_2(&_input, 100, 100, false),part1_2(&_input, 100, 100, false))
-		(0,part1_2(&_input, 100, 100, true))
+		(part1_2(&_input, 100, 100, false),part1_2(&_input, 100, 100, false))
+		//(0,part1_2(&_input, 100, 100, true))
 	}
 
 
@@ -35,7 +35,7 @@ pub mod solution {
 			y += 1;
 		}
 
-		if (part2) {
+		if part2 {
 			coords.insert((0,0), true);
 			coords.insert((0,size-1), true);
 			coords.insert((size-1, 0), true);
@@ -57,7 +57,7 @@ pub mod solution {
 				for y in 0..size {
 					let cells = [(x-1, y-1),(x, y-1),(x+1, y-1),(x-1,y),(x+1,y),(x-1,y+1),(x,y+1),(x+1,y+1)];
 					let mut sub_total = 0;
-					let mut is_on = false;
+					let is_on;
 					match coords.get(&(x,y)) {
 						Some(_) => is_on = true,
 						None => is_on = false
@@ -65,7 +65,7 @@ pub mod solution {
 
 
 					for cell in cells.iter() {
-						if (cell.0 < 0 || cell.0 >= size || cell.1 < 0 || cell.1 >= size) {
+						if cell.0 < 0 || cell.0 >= size || cell.1 < 0 || cell.1 >= size {
 							continue;
 						}
 
@@ -85,7 +85,7 @@ pub mod solution {
 
 			coords = new_coords;
 			//top corners are jammed on
-			if (part2) {
+			if part2 {
 				if coords.insert((0,0), true) == None {
 					total += 1;
 				}
@@ -107,20 +107,6 @@ pub mod solution {
 		total
 	}
 
-	fn print_grid(coords: &HashMap<(i64,i64), bool>, size: i64) {
-		for y in 0..size {
-			let mut row = "".to_string();
-			for x in 0..size {
-				match coords.get(&(x,y)) {
-					Some(_) => row.push_str("#"),
-					None => row.push_str(".")
-				}
-			}
-			println!("{:?}", row);	
-		}
-	}
-
-	
 	#[test]
 	fn test_part_1_2() {
 		let initial = &vec![

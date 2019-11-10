@@ -52,8 +52,6 @@ pub mod solution {
 		let texture =  (sprinkle[3] * sprinkle_count) + (peanut[3] * peanut_count) + (frosting[3] * frosting_count) + (sugar[3] * sugar_count);
 		let calories =  (sprinkle[4] * sprinkle_count) + (peanut[4] * peanut_count) + (frosting[4] * frosting_count) + (sugar[4] * sugar_count);
 
-		let mut total = 1;
-
 		if capacity < 0 || durability < 0 || flavor < 0 || texture < 0 {
 			return (0,0);
 		}

@@ -33,7 +33,6 @@ pub mod solution {
 		magic.push(Magic { cost: 229, damage: 0, buff: 0, shield_turns: 0, poison_turns: 0, recharge_turns: 5 });
 
 		let mut least_to_win = 2000;
-		let mut most_to_lose = 0;
 
 		const BOSS_DAMAGE: i64 =  9;
 		let mut limit = 10000;
@@ -41,7 +40,7 @@ pub mod solution {
 			limit = 30000;
 		}
 
-		for x in 0..limit {
+		for _ in 0..limit {
 			let mut boss_health =  58 as i64;
 			let mut user_health =  50 as i64;
 			let mut mana = 500 as i64;

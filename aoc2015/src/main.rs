@@ -1,6 +1,6 @@
 extern crate regex;
 mod loadinput;
-/*mod day01;
+mod day01;
 mod day02;
 mod day03;
 mod day04;
@@ -13,23 +13,23 @@ mod day10;
 mod day11;
 mod day12;
 mod day13;
-mod day14;*/
-//mod day15;
-//mod day16;
-//mod day17;
-//mod day18;
-//mod day19;
-//mod day20;
-//mod day21;
-//mod day22;
-//mod day23;
-//mod day24;
+mod day14;
+mod day15;
+mod day16;
+mod day17;
+mod day18;
+mod day19;
+mod day20;
+mod day21;
+mod day22;
+mod day23;
+mod day24;
 mod day25;
 
 fn main() {
     println!("Advent of Code 2015");
 
-    /*let (part1, part2) = day01::solution::run();
+    let (part1, part2) = day01::solution::run();
     println!("Day 1 ---- Part1: {}, Part2: {}", part1, part2);
 
     let (part1, part2) = day02::solution::run();
@@ -69,39 +69,37 @@ fn main() {
     println!("Day 13 ---- Part1: {}, Part2: {}", part1, part2);
 
     let (part1, part2) = day14::solution::run();
-    println!("Day 14 ---- Part1: {}, Part2: {}", part1, part2);*/
+    println!("Day 14 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day15::solution::run();
-    //println!("Day 15 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day15::solution::run();
+    println!("Day 15 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day16::solution::run();
-    //println!("Day 16 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day16::solution::run();
+    println!("Day 16 ---- Part1: {}, Part2: {}", part1, part2);
 
-  //  let (part1, part2) = day17::solution::run();
-    //println!("Day 17 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day17::solution::run();
+    println!("Day 17 ---- Part1: {}, Part2: {}", part1, part2);
 
+    let (part1, part2) = day18::solution::run();
+    println!("Day 18 ---- Part1: {}, Part2: {}", part1, part2);
 
-   // let (part1, part2) = day18::solution::run();
-    //println!("Day 18 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day19::solution::run();
+    println!("Day 19 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day19::solution::run();
-    //println!("Day 19 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day20::solution::run();
+    println!("Day 20 ---- Part1: {}, Part2: {}", part1, part2);
 
+    let (part1, part2) = day21::solution::run();
+    println!("Day 21 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day20::solution::run();
-    //println!("Day 20 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day22::solution::run();
+    println!("Day 22 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day21::solution::run();
-    //println!("Day 21 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day23::solution::run();
+    println!("Day 23 ---- Part1: {}, Part2: {}", part1, part2);
 
-    //let (part1, part2) = day22::solution::run();
-    //println!("Day 22 ---- Part1: {}, Part2: {}", part1, part2);
-
-    //let (part1, part2) = day23::solution::run();
-    //println!("Day 23 ---- Part1: {}, Part2: {}", part1, part2);
-
-    //let (part1, part2) = day24::solution::run();
-    //println!("Day 24 ---- Part1: {}, Part2: {}", part1, part2);
+    let (part1, part2) = day24::solution::run();
+    println!("Day 24 ---- Part1: {}, Part2: {}", part1, part2);
 
     let (part1, part2) = day25::solution::run();
     println!("Day 25 ---- Part1: {}, Part2: {}", part1, part2);
